@@ -39,6 +39,10 @@ export default function ModalAddTask({ task, onClose, onSubmit }: ModalAddTaskPr
         toastError('Please select a valid due date.');
         return;
       }
+      if (dayjs(taskInfo.dueDate).isBefore(dayjs().startOf('day'))) {
+        toastError('Due date cannot be in the past.');
+        return;
+      }
       onSubmit({
         ...(task?.id && { id: task.id }),
         title: taskInfo.title,
