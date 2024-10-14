@@ -80,5 +80,5 @@ To run the application locally, follow these steps:
 ## Technologies Used
 
 - React for building user interfaces
-- JavaScript (or TypeScript) for application logic
+- TypeScript for application logic
 - Material-UI with custom theme and font for styling
