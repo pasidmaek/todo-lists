@@ -1,7 +1,7 @@
 import { Box, Modal } from "@mui/material";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-type ModalContextType = {
+export type ModalContextType = {
   isModalOpen: boolean;
   modalContent: ReactNode | null;
   openModal: (content: ReactNode) => void;
@@ -32,23 +32,14 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
     <ModalContext.Provider value={{ isModalOpen, modalContent, openModal, closeModal }}>
       {children}
       <Modal
+        role='dialog'
+        data-testid='modal-dialog'
         open={isModalOpen}
         onClose={closeModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 400,
-          bgcolor: '#242424',
-          border: '2px solid #000',
-          borderRadius: '2%',
-          boxShadow: 24,
-          p: 4,
-        }}>
+        <Box>
           {modalContent}
         </Box>
       </Modal>

@@ -1,50 +1,84 @@
-# React + TypeScript + Vite
+# Todo List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The Todo List Application is designed to help users manage their tasks efficiently. It allows users to create, edit, delete, and filter tasks based on their completion status. By default, only incomplete tasks are displayed, with the ability to view all tasks through a dropdown filter.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Task Status**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  - Tasks can have two statuses: **Completed** and **Incomplete**.
+  - The application defaults to showing only incomplete tasks.
 
-- Configure the top-level `parserOptions` property like this:
+- **Task Filtering**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  - A dropdown filter allows users to switch between viewing only incomplete tasks or all tasks (completed and incomplete).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Adding Tasks**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+  - Click the **"Add Task"** button to open a modal for inputting task details.
+  - Required fields: **Title**, **Description**, **Due Date** (minimum date is today).
+  - Once added, the task will appear at the bottom of the incomplete task list on the main screen.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Task Cards**
+
+  - Each task is displayed in a card format with the following features:
+    - A checkbox to mark the task as completed. Once checked, the task will disappear from the incomplete list and move to the completed list.
+    - A pencil icon to edit the task.
+    - A trash icon to delete the task.
+
+- **Editing Tasks**
+
+  - Clicking the pencil icon opens a modal where users can edit the task's title, description, and due date.
+  - Changes are saved by clicking the **"Edit Task"** button.
+
+- **Deleting Tasks**
+  - Clicking the trash icon will open a confirmation modal.
+  - After confirming, the task will be permanently deleted.
+
+## Usage Instructions
+
+### Adding a Task
+
+1. Click the **"Add Task"** button.
+2. Fill out the modal form with the task title, description, and due date (ensure the due date is today or later).
+3. Click **"Add Task"** to save the new task.
+4. The new task will be displayed at the bottom of the incomplete tasks list.
+
+### Editing a Task
+
+1. Click the pencil icon on the task card you want to edit.
+2. Modify the title, description, and due date in the modal.
+3. Click **"Edit Task"** to save the changes.
+
+### Deleting a Task
+
+1. Click the trash icon on the task card you wish to delete.
+2. A confirmation modal will appear. Click **"Confirm"** to delete the task.
+
+### Filtering Tasks
+
+- Use the dropdown menu to select between viewing:
+  - **Incomplete Tasks** (default)
+  - **All Tasks** (includes completed tasks)
+
+## Installation
+
+To run the application locally, follow these steps:
+
+1. clone this repository
+2. install dependencies
+   ```bash
+   npm install
+   ```
+3. start dev
+   ```bash
+   npm start
+   ```
+
+## Technologies Used
+
+- React for building user interfaces
+- JavaScript (or TypeScript) for application logic
+- Material-UI with custom theme and font for styling
