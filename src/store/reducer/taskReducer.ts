@@ -28,7 +28,7 @@ const initialState = {
       isComplete: true,
     },
   ],
-  nextId: 1,
+  nextId: 3,
 };
 
 const taskReducer = (state: TaskState = initialState, action: TaskAction) => {
