@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Todo List Application is designed to help users manage their tasks efficiently. It allows users to create, edit, delete, and filter tasks based on their completion status. By default, only incomplete tasks are displayed, with the ability to view all tasks through a dropdown filter.
+The Todo List Application is designed to help users manage their tasks efficiently. It allows users to create, edit, delete, and filter tasks based on their completion status. By default, only incomplete tasks are displayed, with the ability to view all tasks through a dropdown filter. The task lists are not permanently stored, as they are managed using Redux for state management.
 
 ## Features
 
@@ -82,3 +82,4 @@ To run the application locally, follow these steps:
 - React for building user interfaces
 - TypeScript for application logic
 - Material-UI with custom theme and font for styling
+- Redux for managing the task list state
