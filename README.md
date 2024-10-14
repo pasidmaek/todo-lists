@@ -61,7 +61,7 @@ The Todo List Application is designed to help users manage their tasks efficient
 
 - Use the dropdown menu to select between viewing:
   - **Incomplete Tasks** (default)
-  - **All Tasks** (includes completed tasks)
+  - **Completed Tasks** (you can select to view all statuses or select this one only to view completed tasks)
 
 ## Installation
 
