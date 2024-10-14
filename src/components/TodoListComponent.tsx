@@ -82,14 +82,6 @@ export default function TodoListComponent() {
             renderValue={() => 'Filter Tasks'}
             data-testid="filter-tasks-select"
           >
-            {/* <MenuItem key={'Completed'} value={'Completed'} data-testid={'filter-Completed'}>
-              <Checkbox checked={selectedFilters.includes('Completed')} />
-              <ListItemText primary={'Completed'} />
-            </MenuItem>
-            <MenuItem key={'Incomplete'} value={'Incomplete'} data-testid={'filter-Incomplete'}>
-              <Checkbox checked={selectedFilters.includes('Incomplete')} />
-              <ListItemText primary={'Incomplete'} />
-            </MenuItem> */}
             {filterOptions.map((option) => (
               <MenuItem key={option} value={option}>
                 <Checkbox checked={selectedFilters.includes(option)} data-testid={option} />

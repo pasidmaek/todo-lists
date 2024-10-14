@@ -51,9 +51,9 @@ export default function CardTask({ id, title, description, due, isComplete, onEd
   };
 
   return (
-    <div className='flex justify-between items-start border-2 rounded-md p-2 min-h-36 max-h-48'>
+    <div className='flex justify-between items-start border-2 rounded-md p-2 min-h-36 max-h-48' data-testid={`task-card-${id}`} >
       <div className='flex items-start'>
-        <Checkbox checked={complete} onChange={handleSetComplete} data-testid='checkbox-complete'/>
+        <Checkbox checked={complete} onChange={handleSetComplete} data-testid='checkbox-complete' />
         <div className='justify-between mt-2 flex flex-col min-h-full'>
           <div>
             <p className='font-bold' style={complete ? { textDecoration: 'line-through' } : {}}>{title ?? 'Task 1'}</p>
@@ -63,8 +63,8 @@ export default function CardTask({ id, title, description, due, isComplete, onEd
         </div>
       </div>
       <div className='flex items-start gap-4 mt-2'>
-        <IconButton data-testid='task-edit-button' aria-label="edit" color='success' onClick={handleOpenEditModal}><EditIcon /></IconButton>
-        <IconButton data-testid='task-delete-button' aria-label="delete" color='error' onClick={handleOpenDeleteModal}><DeleteIcon /></IconButton>
+        <IconButton data-testid={`edit-task-button-${id}`} aria-label="edit" color='success' onClick={handleOpenEditModal}><EditIcon /></IconButton>
+        <IconButton data-testid={`delete-task-button-${id}`} aria-label="delete" color='error' onClick={handleOpenDeleteModal}><DeleteIcon /></IconButton>
       </div>
     </div>
   );

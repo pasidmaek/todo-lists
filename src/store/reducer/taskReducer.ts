@@ -12,7 +12,22 @@ type TaskAction =
   | { type: 'DELETE_TASK'; payload: number };
 
 const initialState = {
-  taskLists: [],
+  taskLists: [
+    {
+      id: 1,
+      title: 'Task 1',
+      description: 'Attend team meeting',
+      due: new Date('2024-10-25'),
+      isComplete: false,
+    },
+    {
+      id: 2,
+      title: 'Task 2',
+      description: 'Review design documents',
+      due: new Date('2024-10-22'),
+      isComplete: true,
+    },
+  ],
   nextId: 1,
 };
 

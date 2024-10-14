@@ -82,7 +82,7 @@ export default function ModalAddTask({ task, onClose, onSubmit }: ModalAddTaskPr
         <IconButton onClick={onClose}>
           <ArrowBackIcon />
         </IconButton>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2' data-testid='title-task'>
           <h1 className='font-bold'>
             {task ? 'Edit' : 'Add'} Task
           </h1>
@@ -94,6 +94,7 @@ export default function ModalAddTask({ task, onClose, onSubmit }: ModalAddTaskPr
       <DialogContent>
         <form onSubmit={handleSubmit}>
           <TextField
+            data-testid='title-task-input'
             label="Title *"
             value={taskInfo.title}
             onChange={(e) => updateTaskInfo('title', e.target.value)}
@@ -101,6 +102,7 @@ export default function ModalAddTask({ task, onClose, onSubmit }: ModalAddTaskPr
             margin='dense'
           />
           <TextField
+            data-testid='description-task-input'
             label="Description *"
             value={taskInfo.description}
             onChange={(e) => updateTaskInfo('description', e.target.value)}
@@ -111,6 +113,7 @@ export default function ModalAddTask({ task, onClose, onSubmit }: ModalAddTaskPr
           />
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
+              data-testid='due-date-task-input'
               className='w-full'
               sx={{
                 marginY: 1
@@ -127,6 +130,7 @@ export default function ModalAddTask({ task, onClose, onSubmit }: ModalAddTaskPr
               variant='contained'
               type="submit"
               color="primary"
+              daa-testid='submit-task-button'
             >
               {task ? 'Edit' : 'Add'} Task
             </Button>
